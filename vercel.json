@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/api/send-telegram", "destination": "/api/send-telegram.js" }
+  ]
+}
