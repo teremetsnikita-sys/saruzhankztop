@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #08090A;
+  --color-surface: #161718;
+  --color-surface-hover: #23252A;
+  --color-border: #23252A;
+  --color-border-bright: #383B3F;
+  --color-foreground: #D0D6E0;
+  --color-text-secondary: #8A8F98;
+  --color-text-tertiary: #62666D;
+  --color-accent: #E5E5E6;
+  --color-primary: #FFFFFF;
+  --color-brand-yellow: #EAB308;
+  --color-brand-yellow-hover: #CA8A04;
+
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 6px;
+  --radius-xl: 50px;
+  --radius-2xl: 50px;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-background text-foreground selection:bg-brand-yellow/30 selection:text-primary;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+
+  h1 { @apply text-[64px] md:text-[110px] font-[590] tracking-[-0.05em] leading-[0.9] text-primary; }
+  h2 { @apply text-[48px] font-[590] tracking-[-0.03em] leading-[1.1] text-primary; }
+  h3 { @apply text-[13px] font-[510] tracking-tight text-primary; }
+  h4 { @apply text-[16px] font-[510] tracking-tight text-primary; }
+}
+
+@layer utilities {
+  .linear-glass {
+    @apply backdrop-blur-[20px] bg-background/80 border border-white/5;
+  }
+  .linear-card {
+    @apply bg-surface border border-border rounded-md transition-all duration-[0.16s] ease-out;
+  }
+  .linear-card:hover {
+    @apply border-border-bright bg-surface-hover;
+  }
+  .linear-button {
+    @apply h-8 px-3 text-[13px] font-[510] rounded-md transition-all duration-[0.1s] ease-out inline-flex items-center justify-center;
+  }
+  .linear-input {
+    @apply h-9 px-4 bg-transparent border border-border rounded-md text-[13px] focus:border-accent/40 focus:ring-1 focus:ring-accent/20 outline-none transition-all;
+  }
+
+  @keyframes scan-slow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+  }
+
+  .animate-scan-slow {
+    animation: scan-slow 8s linear infinite;
+  }
+}
+
+:root {
+  --background: #08090A;
+  --foreground: #D0D6E0;
+  --card: #161718;
+  --card-foreground: #F7F8F8;
+  --popover: #090A0B;
+  --popover-foreground: #D0D6E0;
+  --primary: #FFFFFF;
+  --primary-foreground: #08090A;
+  --secondary: #23252A;
+  --secondary-foreground: #FFFFFF;
+  --muted: #121414;
+  --muted-foreground: #8A8F98;
+  --accent: #E5E5E6;
+  --accent-foreground: #08090A;
+  --brand-yellow: #EAB308;
+  --brand-yellow-foreground: #08090A;
+  --destructive: #FF4D4D;
+  --border: #23252A;
+  --input: #23252A;
+  --ring: #E5E5E6;
+  --radius: 6px;
+}

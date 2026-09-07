@@ -1,0 +1,8 @@
+{
+  "name": "Saruzhan Engineering - Parker Distributor",
+  "description": "Official Parker distributor catalog. Precision hydraulic systems, expert engineering, and extensive inventory of 10,000+ SKUs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
